@@ -11,7 +11,7 @@ class Student(models.Model):
     reg_no = models.AutoField(unique=True,primary_key=True)
     firstname = models.CharField(max_length=125)
     lastname = models.CharField(max_length=125)
-    dob = models.DateField()
+    dob = models.CharField(max_length=20)
     father_name = models.CharField(max_length=125)
     mother_name = models.CharField(max_length=125)
     guardian_contact = models.IntegerField()
@@ -42,7 +42,7 @@ class Assignments(models.Model):
     description = models.CharField(max_length=1000)
     for_standard = models.IntegerField(choices= standard)
     issue_date = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateTimeField(auto_now=True)
+    due_date = models.DateTimeField()
     subject = models.CharField(choices = choices,max_length=250)
 
 

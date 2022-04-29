@@ -2,10 +2,11 @@ from django.urls import path
 from students import views
 
 urlpatterns = [
-    path('home',views.add_student),
+    path('addstudent',views.add_student),
     path('login',views.signin),
+    path('islogin',views.islogin),
     path('signout',views.signout),
-    path('assignment',views.add_assignment),
+    path('addassignment',views.add_assignment),
     path('getstudent',views.get_students),
     path('getstudent/<int:id>',views.get_students),
     path('updatestudent/<int:id>',views.update_student),

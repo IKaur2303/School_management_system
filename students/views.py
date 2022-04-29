@@ -27,9 +27,17 @@ def signin(request):
     return JsonResponse(data={'msg':'bad request'},status=400)
 
 @csrf_exempt
+def islogin(request):
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return JsonResponse(data={'msg':'Logged in'},status=200)
+        return JsonResponse(data={'msg':'You have to login'},status=403)
+    
+
+@csrf_exempt
 def signout(request):
     logout(request)
-    return JsonResponse(data={'msg':'logged out successfully'})
+    return JsonResponse(data={'msg':'logged out successfully'},status=200)
 
 
 @csrf_exempt
@@ -86,7 +94,7 @@ def remove_student(request,id):
 @csrf_exempt
 def get_students(request,id=None):
     if request.method == 'GET':
-        if request.user.is_authenticated:
+        # if request.user.is_authenticated:
             if id:
                 try:
                     student = models.Student.objects.get(reg_no = id)
@@ -100,7 +108,7 @@ def get_students(request,id=None):
                 for student in data:
                     students.append(student.tojson())
                 return JsonResponse(data={'data':students},status = 200)
-        return JsonResponse(data={'msg':'not authenticated'},status=401)
+        # return JsonResponse(data={'msg':'not authenticated'},status=401)
     return JsonResponse(data={'msg':'bad request'},status=400)
 
         
@@ -124,14 +132,14 @@ def add_assignment(request):
 @csrf_exempt
 def get_assignment(request):
     if request.method == 'GET':
-        if request.user.is_authenticated:
+        # if request.user.is_authenticated:
             data = models.Assignments.objects.all()
             assignments = []
 
             for assignment in data:
                 assignments.append(assignment.tojson())
             return JsonResponse(data={'data':assignments},status=200)
-        return JsonResponse(data={'msg':'not authenticated'},status=401)
+        # return JsonResponse(data={'msg':'not authenticated'},status=401)
     return JsonResponse(data={'msg':'bad request'},status = 400)
 
 

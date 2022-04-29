@@ -1,0 +1,258 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#root{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  /* align-content: center; */
+  align-items: center;
+  background-color: #fff;
+  justify-content: center;
+}
+
+nav{
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: #064635;
+  color:   #F4EEA9;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 9;
+}
+ul  a{
+  text-decoration: none;
+}
+/* #FAEEE7 */
+nav ul{
+  display: flex;
+  list-style: none;
+  
+}
+
+nav ul li{
+  margin: 0 10px;
+  background-color: #F4EEA9;
+  color: #064635;
+  padding: 5px 12px;
+  border-radius: 2px;
+  transition: .2s;
+  cursor: pointer;
+}
+nav ul li:hover{
+  background-color: #064635;
+  border: 1px solid #F4EEA9;
+  color: #F4EEA9;
+  
+}
+nav ul li.admin{
+  background-color: #064635;
+  border: 1px solid #F4EEA9;
+  color: #F4EEA9;
+
+}
+nav ul li.admin:hover{
+  background-color: #F4EEA9;
+  border: 1px solid #064635;
+  color: #064635;
+}
+form{
+  width: 60%;
+  min-width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #064635;
+  color: #F4EEA9;
+}
+form.login input[type='submit']{
+  width: 150px;
+}
+form input[type="submit"]{
+  margin-top: 20px;
+  transform: translateY(5px);
+  background-color: #F4EEA9;
+  color: #064635;
+
+}
+form.login{
+  width: auto;
+  flex-direction: column;
+
+}
+
+form div{
+  /* width: 100%; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+}
+form h1{
+  width: 100%;
+  text-align: center;
+}
+
+form div input,form div label,form div select{
+  width: 300px;
+  padding: 5px;
+}
+
+.profile {
+  width:80%;
+  min-width: 700px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F4EEA9;
+  color: #064635;
+  border: 1px solid #064635;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.profile div{
+  background-color: #064635;
+  color: #F4EEA9;
+  border: 1px solid #F4EEA9;
+  padding: 5px 10px;  
+  border-radius: 5px;
+  margin: 25px ;
+}
+
+.profile .heading{
+  width: 100%;
+  background: linear-gradient(90deg,#064635,transparent);
+  color: #F4EEA9;
+  border-radius: 0;
+  font-size: 23px;
+  /* text-align: center; */
+  font-weight: 600;
+  margin: 0 ;
+
+}
+.assignments{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 300px;
+
+}
+.assignments .assignment{
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #CEE6B4;
+  color: #064635;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.assignments .assignment div{
+  background: linear-gradient(90deg,#F4EEA9,transparent);
+  padding: 4px;
+  margin: 2px;
+}
+
+.adminpanel{
+  height: calc(100vh - 70px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.adminpanel .assignments,.adminpanel .students{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border: 1px solid #064635;
+  overflow-y: scroll;
+  padding-top: 80px;
+}
+
+.adminpanel .assignments{
+  right: 0;
+  margin: 0;
+}
+
+.adminpanel .students{
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.adminpanel .students .student{
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #CEE6B4 ;
+  margin: 10px;
+  cursor: pointer;
+}
+.adminpanel .students .student div{
+  background: linear-gradient(90deg,#F4EEA9,transparent);
+  margin: 2px;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.students .studentheading{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #CEE6B4;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.students .studentheading span{
+  width: 100px;
+  margin: 10px;
+  background: linear-gradient(90deg,#F4EEA9,#fff);
+  color:#064635;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.adminpanel .students .heading, .adminpanel .assignments .heading{
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(90deg,transparent,#F4EEA9,transparent);
+  color: #064635;
+  position: absolute;
+  top: 0;
+  font-size: 25px;
+}
